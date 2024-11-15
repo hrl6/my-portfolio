@@ -1,10 +1,11 @@
 <template>
   <h2 class="flex justify-center text-4xl text-primary font-bold mb-8">Contact</h2>
-  <div class="flex justify-center items-center gap-6 p-4">
+  <div class="flex flex-col md:flex-row justify-center items-center gap-6 p-4">
     <!-- WhatsApp -->
     <a 
-      href="https://wa.me/60128112302" 
-      class="flex items-center space-x-3 px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-110 bg-darkers group"
+      href="https://wa.me/60128112302"
+      target="_blank"
+      class="w-64 md:w-auto flex items-center space-x-4 px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-110 bg-darkers group"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +31,8 @@
     <!-- Gmail -->
     <a 
       href="mailto:hrulhadi@gmail.com"
-      class="flex items-center space-x-3 px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-110 bg-darkers group"
+      target="_blank"
+      class="w-64 md:w-auto flex items-center space-x-4 px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-110 bg-darkers group"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -55,8 +57,9 @@
 
     <!-- LinkedIn -->
     <a
-      href="https://linkedin.com/in/hairulmarwan" 
-      class="flex items-center space-x-3 px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-110 bg-darkers group"
+      href="https://linkedin.com/in/hairulmarwan"
+      target="_blank"
+      class="w-64 md:w-auto flex items-center space-x-4 px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-110 bg-darkers group"
     >
       <svg
       xmlns="http://www.w3.org/2000/svg"

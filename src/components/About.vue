@@ -1,17 +1,25 @@
 <template>
   <div class="max-w-6xl mx-auto px-4">
-    <h2 class="flex justify-center text-4xl text-primary font-bold mb-8">About Me</h2>
-    <div class="flex justify-center">
-      <div class="text-4xl font-bold text-white relative">
+    
+    <div class="flex justify-center flex-col items-center">
+      <h2 class="flex justify-center text-4xl text-primary font-bold mb-2">About Me</h2>
+      <div class="text-4xl font-semibold text-white relative pt-2">
         <span class="pb-2 inline-block typing-animation">Self-Taught Developer</span>
       </div>
     </div>
-  <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
-    <div >
-      <p class="text-lg text-white mb-4">
-        In the past, he hadn't considered the importance of ocular power. He had been content with his own abilities. But after bringing Nagato back, he found himself drawn to the potential of the Rinnegan, the legendary eyes that Nagato possessed, though still dormant. To harness the full power of the Rinnegan, Orochimaru knew he would need a considerable amount of spiritual energy and physical preparation.          </p>
-      <p class="text-lg text-white">
-        In short, if he wanted to fully awaken and control the Rinnegan, he'd need to obtain Uchiha genetic material to cultivate his own Sharingan and, eventually, fuse it into a pair of Mangekyo.          </p>
+  <div class="flex flex-col lg:flex-row items-center lg:gap-8">
+    <div class="w-96 md:min-w-96">
+      <img src="../img/coding-green.png" alt="Coding Typing">
+    </div>
+    <div>
+      <div class="px-10">
+        <p class="text-lg text-white mb-4">
+          Salam! I’m Hairul Marwan, a self-taught web developer from Sabah, Malaysia. I’m passionate about creating the full experience, so I enjoy working on both the frontend and backend. From crafting smooth, interactive user interfaces to building the logic that powers everything behind the scenes, I love the balance of both sides and the challenge of making them work together seamlessly.
+        </p>
+        <p class="text-lg text-white">
+          When I’m not coding, you can find me learning something new or experimenting with a project that pushes my skills <span class="italic">(or I might be reading something •ᴗ•)</span>.
+        </p>
+      </div>
     </div>
   </div>
 </div>
