@@ -21,16 +21,14 @@
       :key="project.id"
       class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out"
     >
-      <!-- Container for the image -->
-      <div class="w-full h-40">
-        <!-- Image that fills the container -->
+      <div class="w-96 h-52">
         <img
           :src="project.thumbnail"
           :alt="project.title"
           class="w-full h-full object-cover rounded-md"
         />
       </div>
-      <div class="mt-4 text-center text-lg font-semibold truncate bg-gray-200 text-gray-800 rounded-b" :title="project.title">
+      <div class="text-center text-lg font-semibold truncate bg-gray-200 text-gray-800 rounded-b" :title="project.title">
         {{ project.title }}
       </div>
     </div>
@@ -42,10 +40,18 @@ export default {
   data() {
     return {
       projects: [
-        { id: 1, title: 'Simple Blog', thumbnail: './src/img/project1.png' },
-        { id: 2, title: 'Selain itu', thumbnail: './src/img/project1.png' },
+        { id: 1, title: 'Simple Blog', thumbnail: '' },
+        { id: 2, title: 'Selain itu', thumbnail: '' },
       ],
     };
+  },
+  created() {
+    import('../img/project1.png').then((module) => {
+      this.projects[0].thumbnail = module.default;
+    });
+    import('../img/project2.png').then((module) => {
+      this.projects[1].thumbnail = module.default;
+    });
   },
 };
 </script>
