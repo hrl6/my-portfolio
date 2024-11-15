@@ -7,8 +7,8 @@
           <div class="flex gap-6">
             <a @click="scrollToTop" class="hover:text-primary transition-colors cursor-pointer">Home</a>
             <a @click="scrollToSection('about')" class="hover:text-primary transition-colors cursor-pointer">About</a>
+            <a @click="scrollToSection('stacks')" class="hover:text-primary transition-colors cursor-pointer">Stacks</a>
             <a @click="scrollToSection('projects')" class="hover:text-primary transition-colors cursor-pointer">Projects</a>
-            <!-- <RouterLink to="/projects" class="hover:text-primary transition-colors">Projects</RouterLink> -->
             <a @click="scrollToSection('contact')" class="hover:text-primary transition-colors cursor-pointer">Contact</a>
           </div>
         </div>
@@ -16,29 +16,26 @@
     </nav>
 
     <main>
-      <div class="flex justify-center">
-        <div class="max-w-7xl w-full px-4">
-          <section class="bg-darker w-full pt-16">
-            <Hero />
-          </section>
+      <div class="flex justify-center flex-col">
+        <section class="bg-darker w-full pt-16">
+          <Hero />
+        </section>
 
-          <section id="about" class="w-full py-20">
-            <About />
-          </section>
+        <section id="about" class="w-full py-20">
+          <About />
+        </section>
 
-          <section id="projects" class="w-full py-20">
-            <Projects />
-          </section>
+        <section id="stacks" class="w-full py-20">
+          <Stacks />
+        </section>
 
-          <!-- project section -->
-          <!-- <div class="w-full py-20">
-            <RouterView />
-          </div> -->
+        <section id="projects" class="w-full py-20">
+          <Projects />
+        </section>
 
-          <section id="contact" class="w-full py-20">
-            <Contact />
-          </section>
-        </div>
+        <section id="contact" class="w-full py-20">
+          <Contact />
+        </section>
       </div>
     </main>
   </div>
@@ -50,6 +47,7 @@
   import About from "./components/About.vue";
   import Contact from "./components/Contact.vue";
 import Projects from "./components/Projects.vue";
+import Stacks from "./components/Stacks.vue";
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
