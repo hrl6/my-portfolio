@@ -40,7 +40,7 @@ export default {
         },
         {
           id: 2,
-          title: 'Selain itu',
+          title: 'Personal Notes',
           link: 'https://github.com/hrl6/laravel11-notes-personal',
           stacks: 'Laravel | Tailwind CSS',
           thumbnail: '',
