@@ -1,63 +1,51 @@
 <template>
   <div class="min-h-screen bg-dark text-white">
     <!-- TOP NAV -->
-    <nav class="fixed top-0 w-screen bg-darker z-50">
-      <div class="w-full md:w-5/6 mx-auto px-10 md:px-4 py-6">
+    <nav
+      :class="`fixed top-0 w-3/4 sm:w-[600px] mt-8 mx-auto left-0 right-0 bg-dark rounded-2xl z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-[160%]'}`">
+      <div class="w-full mx-auto px-12 py-4">
         <div class="flex justify-between items-center">
           <!-- logo -->
-          <a @click="scrollToTop" class="text-primary text-2xl font-bold cursor-pointer transition-all hover:scale-105">
+          <a @click="scrollToTop"
+            class="hidden sm:block text-primary text-2xl font-bold cursor-pointer transition-all hover:scale-105">
             Herul.
           </a>
 
           <!-- desktop nav -->
           <div class="hidden md:flex gap-6">
-            <a @click="scrollToTop" class="hover:text-primary transition-colors cursor-pointer hover:font-medium">Home</a>
-            <a @click="scrollToSection('about')" class="hover:text-primary transition-colors cursor-pointer hover:font-medium">About</a>
-            <a @click="scrollToSection('stacks')" class="hover:text-primary transition-colors cursor-pointer hover:font-medium">Stacks</a>
-            <a @click="scrollToSection('projects')" class="hover:text-primary transition-colors cursor-pointer hover:font-medium">Projects</a>
-            <a @click="scrollToSection('contact')" class="hover:text-primary transition-colors cursor-pointer hover:font-medium">Contact</a>
+            <a @click="scrollToTop" class="hover:text-primary transition-colors cursor-pointer hover:scale-105">
+              Home
+            </a>
+            <a @click="scrollToSection('about')"
+              class="hover:text-primary transition-colors cursor-pointer hover:scale-105">
+              About
+            </a>
+            <a @click="scrollToSection('stacks')"
+              class="hover:text-primary transition-colors cursor-pointer hover:scale-105">
+              Stacks
+            </a>
+            <a @click="scrollToSection('projects')"
+              class="hover:text-primary transition-colors cursor-pointer hover:scale-105">
+              Projects
+            </a>
+            <a @click="scrollToSection('contact')"
+              class="hover:text-primary transition-colors cursor-pointer hover:scale-105">
+              Contact
+            </a>
           </div>
 
-          <!-- mobile nav -->
-          <button 
-            @click="isMenuOpen = !isMenuOpen" 
-            class="md:hidden p-2 text-white"
-          >
-            <svg 
-              class="w-6 h-6" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path 
-                v-if="!isMenuOpen" 
-                stroke-linecap="round" 
-                stroke-linejoin="round" 
-                stroke-width="2" 
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-              <path 
-                v-else 
-                stroke-linecap="round" 
-                stroke-linejoin="round" 
-                stroke-width="2" 
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </div>
-
-        <!-- mobile menu -->
-        <div 
-          v-show="isMenuOpen" 
-          class="md:hidden"
-        >
-          <div class="flex flex-col px-2 pt-2 pb-3 gap-2">
-            <a @click="handleMobileClick('top')" class="text-end block px-3 py-2 text-white hover:text-primary transition-colors cursor-pointer hover:font-medium">Home</a>
-            <a @click="handleMobileClick('about')" class="text-end block px-3 py-2 text-white hover:text-primary transition-colors cursor-pointer hover:font-medium">About</a>
-            <a @click="handleMobileClick('stacks')" class="text-end block px-3 py-2 text-white hover:text-primary transition-colors cursor-pointer hover:font-medium">Stacks</a>
-            <a @click="handleMobileClick('projects')" class="text-end block px-3 py-2 text-white hover:text-primary transition-colors cursor-pointer hover:font-medium">Projects</a>
-            <a @click="handleMobileClick('contact')" class="text-end block px-3 py-2 text-white hover:text-primary transition-colors cursor-pointer hover:font-medium">Contact</a>
+          <!-- mobile nav icons -->
+          <div class="md:hidden flex gap-6">
+            <HomeIcon @click="handleMobileClick('top')"
+              class="w-6 h-6 hover:text-primary transition-colors cursor-pointer" />
+            <UserIcon @click="handleMobileClick('about')"
+              class="w-6 h-6 hover:text-primary transition-colors cursor-pointer" />
+            <LayersIcon @click="handleMobileClick('stacks')"
+              class="w-6 h-6 hover:text-primary transition-colors cursor-pointer" />
+            <FolderIcon @click="handleMobileClick('projects')"
+              class="w-6 h-6 hover:text-primary transition-colors cursor-pointer" />
+            <MailIcon @click="handleMobileClick('contact')"
+              class="w-6 h-6 hover:text-primary transition-colors cursor-pointer" />
           </div>
         </div>
       </div>
@@ -65,25 +53,35 @@
 
     <main>
       <div class="flex justify-center flex-col">
-        <section class="bg-darker w-full pt-24 md:pt-16">
-          <Hero />
-        </section>
+        <div v-slide-in class="delay-400 opacity-0 transition-all duration-700 ease-in">
+          <section class="bg-darker w-full pt-24 md:pt-16">
+            <Hero />
+          </section>
+        </div>
 
-        <section id="about" class="w-full py-16 md:py-20">
-          <About />
-        </section>
+        <div v-slide-in class="delay-400 opacity-0 transition-all duration-700 ease-in">
+          <section id="about" class="w-full py-16 md:py-20">
+            <About />
+          </section>
+        </div>
 
-        <section id="stacks" class="w-full py-16 md:py-20">
-          <Stacks />
-        </section>
+        <div v-slide-in class="delay-400 opacity-0 transition-all duration-700 ease-in">
+          <section id="stacks" class="w-full py-16 md:py-20">
+            <Stacks />
+          </section>
+        </div>
 
-        <section id="projects" class="w-full py-16 md:py-20">
-          <Projects />
-        </section>
+        <div v-slide-in class="delay-400 opacity-0 transition-all duration-700 ease-in">
+          <section id="projects" class="w-full py-16 md:py-20">
+            <Projects />
+          </section>
+        </div>
 
-        <section id="contact" class="w-full py-16 md:py-20">
-          <Contact />
-        </section>
+        <div v-slide-in class="delay-400 opacity-0 transition-all duration-700 ease-in">
+          <section id="contact" class="w-full py-16 md:py-20">
+            <Contact />
+          </section>
+        </div>
       </div>
     </main>
 
@@ -94,15 +92,26 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import Hero from "./components/Hero.vue"
 import About from "./components/About.vue"
 import Contact from "./components/Contact.vue"
 import Projects from "./components/Projects.vue"
 import Stacks from "./components/Stacks.vue"
 import Footer from "./components/Footer.vue"
+import {
+  Home as HomeIcon,
+  User as UserIcon,
+  Layers as LayersIcon,
+  Folder as FolderIcon,
+  Mail as MailIcon
+} from 'lucide-vue-next'
+import { slideIn } from './directives/slideIn'
 
-const isMenuOpen = ref(false)
+const vSlideIn = slideIn
+
+const isVisible = ref(true)
+let lastScrollPosition = 0
 
 const scrollToSection = (sectionId) => {
   const element = document.getElementById(sectionId)
@@ -122,11 +131,31 @@ const scrollToTop = () => {
 }
 
 const handleMobileClick = (target) => {
-  isMenuOpen.value = false
   if (target === 'top') {
     scrollToTop()
   } else {
     scrollToSection(target)
   }
 }
+
+const handleScroll = () => {
+  const currentScrollPosition = window.scrollY
+
+  // hide/show animation nav bar once scrolled
+  if (currentScrollPosition < lastScrollPosition) {
+    isVisible.value = true
+  } else {
+    isVisible.value = false
+  }
+
+  lastScrollPosition = currentScrollPosition
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
