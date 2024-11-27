@@ -5,13 +5,14 @@
   </AnimatedSection>
   <AnimatedSectionUp>
     <div class="mx-12">
-      <p v-slide-up class="flex justify-center mb-8 italic">"Frameworks may fade, and libraries may lag, but a sharp dev
+      <p v-slide-up class="flex justify-center mb-8 italic">"Frameworks may fade, and libraries may lag,
+        but a sharp dev
         brain? That’s forever in beta—always improving!"
       </p>
     </div>
   </AnimatedSectionup>
   <AnimatedSectionFade>
-    <div class="animate-slideUp flex justify-center">
+    <div class="flex justify-center">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 justify-center">
         <!-- PHP -->
         <div v-fade-in

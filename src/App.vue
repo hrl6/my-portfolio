@@ -7,7 +7,7 @@
         <div class="flex justify-between items-center">
           <!-- logo -->
           <a @click="scrollToTop"
-            class="hidden sm:block text-primary text-2xl font-bold cursor-pointer transition-all hover:scale-105">
+            class="font-extrabold hidden sm:block text-primary text-2xl cursor-pointer transition-all hover:scale-105">
             Herul.
           </a>
 

@@ -16,33 +16,47 @@ export default {
         dark: '#1a1a1a',
         darker: '#2a2a2a',
       },
-      keyframes: {
-        slideInFromLeft: {
-          '0%': {
-            transform: 'translateX(-20%)',
-            opacity: '0',
+      fontFamily: {
+        raleway: ['Raleway', 'sans-serif'],
+      },
+      //custom font format
+      fontSize: {
+        'heading-lg': [
+          '2.5rem',
+          {
+            lineHeight: '1.2',
+            fontWeight: '700',
+            letterSpacing: '-0.02em',
           },
-          '100%': {
-            transform: 'translateX(0)',
-            opacity: '1',
-          },
-        },
+        ],
+      },
+      // keyframes: {
+      //   slideInFromLeft: {
+      //     '0%': {
+      //       transform: 'translateX(-20%)',
+      //       opacity: '0',
+      //     },
+      //     '100%': {
+      //       transform: 'translateX(0)',
+      //       opacity: '1',
+      //     },
+      //   },
 
-        slideUpFrom: {
-          '0%': {
-            transform: 'translateY(10%)',
-            opacity: '0',
-          },
-          '100%': {
-            transform: 'translateY(0)',
-            opacity: '1',
-          },
-        },
-      },
-      animation: {
-        slideInFromLeft: 'slideInFromLeft 1s ease-in',
-        slideUp: 'slideUpFrom 1s ease-out',
-      },
+      //   slideUpFrom: {
+      //     '0%': {
+      //       transform: 'translateY(10%)',
+      //       opacity: '0',
+      //     },
+      //     '100%': {
+      //       transform: 'translateY(0)',
+      //       opacity: '1',
+      //     },
+      //   },
+      // },
+      // animation: {
+      //   slideInFromLeft: 'slideInFromLeft 1s ease-in',
+      //   slideUp: 'slideUpFrom 1s ease-out',
+      // },
     },
   },
   plugins: [],
