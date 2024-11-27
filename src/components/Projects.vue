@@ -1,32 +1,32 @@
 <template>
-  <h2 class="flex justify-center text-4xl text-primary font-bold mb-8">Projects</h2>
+  <AnimatedSection>
+    <h2 v-slide-in class="flex justify-center text-4xl text-primary font-bold mb-8">Projects</h2>
+  </AnimatedSection>
   <div class="flex flex-wrap justify-center items-center gap-12 p-12">
     <a v-for="project in projects" target="_blank" :href="project.link">
-      <div
-        :key="project.id"
-        class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out hover:scale-110 group"
-      >
-        <div class="w-80 sm:w-96 sm:h-52">
-          <img
-            :src="project.thumbnail"
-            :alt="project.title"
-            class="w-full h-full object-cover rounded-t-md"
-          />
+      <AnimatedSectionUp>
+        <div v-slide-up :key="project.id"
+          class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out hover:scale-110 group">
+          <div class="w-80 sm:w-96 sm:h-52">
+            <img :src="project.thumbnail" :alt="project.title" class="w-full h-full object-cover rounded-t-md" />
+          </div>
+          <div
+            class="text-center text-lg font-semibold truncate bg-gray-200 text-gray-800 rounded-b group-hover:bg-darker duration-300"
+            :title="project.title">
+            <p class="text-lg group-hover:text-primary">{{ project.title }}</p>
+            <p class="text-sm group-hover:text-secondary">{{ project.stacks }}</p>
+          </div>
+          <p></p>
         </div>
-        <div
-          class="text-center text-lg font-semibold truncate bg-gray-200 text-gray-800 rounded-b group-hover:bg-darker duration-300"
-          :title="project.title"
-        >
-          <p class="text-lg group-hover:text-primary">{{ project.title }}</p>
-          <p class="text-sm group-hover:text-secondary">{{ project.stacks }}</p>
-        </div>
-        <p></p>
-      </div>
+      </AnimatedSectionUp>
     </a>
   </div>
 </template>
 
 <script>
+import AnimatedSection from './animations/AnimatedSection.vue';
+import AnimatedSectionUp from './animations/AnimatedSectionUp.vue';
+
 export default {
   data() {
     return {

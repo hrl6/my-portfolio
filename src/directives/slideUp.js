@@ -1,10 +1,10 @@
-export const slideIn = {
+export const slideUp = {
   mounted(el) {
-    console.log('Slide-in directive mounted')
-    el.classList.add('slide-in-element')
+    console.log('Slide-up directive mounted')
+    el.classList.add('slide-up-element')
 
     // initial state
-    el.style.transform = 'translateX(50px)'
+    el.style.transform = 'translateY(50px)'
     el.style.opacity = '0'
     el.style.transition = 'all 1000ms ease-out'
 
@@ -13,7 +13,7 @@ export const slideIn = {
         entries.forEach((entry) => {
           console.log('Intersection observed:', entry.isIntersecting)
           if (entry.isIntersecting) {
-            el.style.transform = 'translateX(0)'
+            el.style.transform = 'translateY(0)'
             el.style.opacity = '1'
             observer.unobserve(el)
           }

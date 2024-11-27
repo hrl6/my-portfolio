@@ -1,19 +1,15 @@
-export const slideIn = {
+export const fadeIn = {
   mounted(el) {
-    console.log('Slide-in directive mounted')
-    el.classList.add('slide-in-element')
+    console.log('Fade-in directive mounted')
+    el.classList.add('fade-in-element')
 
-    // initial state
-    el.style.transform = 'translateX(50px)'
     el.style.opacity = '0'
-    el.style.transition = 'all 1000ms ease-out'
+    el.style.transition = 'opacity 1000ms ease-out'
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          console.log('Intersection observed:', entry.isIntersecting)
           if (entry.isIntersecting) {
-            el.style.transform = 'translateX(0)'
             el.style.opacity = '1'
             observer.unobserve(el)
           }

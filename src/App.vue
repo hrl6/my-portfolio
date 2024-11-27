@@ -53,31 +53,31 @@
 
     <main>
       <div class="flex justify-center flex-col">
-        <div v-slide-in class="delay-400 opacity-0 transition-all duration-700 ease-in">
+        <div>
           <section class="bg-darker w-full pt-24 md:pt-16">
             <Hero />
           </section>
         </div>
 
-        <div v-slide-in class="delay-400 opacity-0 transition-all duration-700 ease-in">
+        <div>
           <section id="about" class="w-full py-16 md:py-20">
             <About />
           </section>
         </div>
 
-        <div v-slide-in class="delay-400 opacity-0 transition-all duration-700 ease-in">
+        <div>
           <section id="stacks" class="w-full py-16 md:py-20">
             <Stacks />
           </section>
         </div>
 
-        <div v-slide-in class="delay-400 opacity-0 transition-all duration-700 ease-in">
+        <div>
           <section id="projects" class="w-full py-16 md:py-20">
             <Projects />
           </section>
         </div>
 
-        <div v-slide-in class="delay-400 opacity-0 transition-all duration-700 ease-in">
+        <div>
           <section id="contact" class="w-full py-16 md:py-20">
             <Contact />
           </section>
@@ -106,9 +106,6 @@ import {
   Folder as FolderIcon,
   Mail as MailIcon
 } from 'lucide-vue-next'
-import { slideIn } from './directives/slideIn'
-
-const vSlideIn = slideIn
 
 const isVisible = ref(true)
 let lastScrollPosition = 0
