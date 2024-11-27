@@ -2,12 +2,14 @@
   <AnimatedSection>
     <h2 v-slide-in class="flex justify-center text-4xl text-primary font-bold mb-4">Tech Stacks
     </h2>
+  </AnimatedSection>
+  <AnimatedSectionUp>
     <div class="mx-12">
-      <p v-slide-in class="flex justify-center mb-8 italic">"Frameworks may fade, and libraries may lag, but a sharp dev
+      <p v-slide-up class="flex justify-center mb-8 italic">"Frameworks may fade, and libraries may lag, but a sharp dev
         brain? That’s forever in beta—always improving!"
       </p>
     </div>
-  </AnimatedSection>
+  </AnimatedSectionup>
   <AnimatedSectionFade>
     <div class="animate-slideUp flex justify-center">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 justify-center">
@@ -101,4 +103,5 @@
 <script setup>
 import AnimatedSection from './animations/AnimatedSection.vue'
 import AnimatedSectionFade from './animations/AnimatedSectionFade.vue';
+import AnimatedSectionUp from './animations/AnimatedSectionUp.vue';
 </script>

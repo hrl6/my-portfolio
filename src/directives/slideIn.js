@@ -3,6 +3,8 @@ export const slideIn = {
     console.log('Slide-in directive mounted')
     el.classList.add('slide-in-element')
 
+    el.parentElement.style.overflow = 'hidden'
+
     // initial state
     el.style.transform = 'translateX(50px)'
     el.style.opacity = '0'

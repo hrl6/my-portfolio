@@ -2,9 +2,9 @@
   <AnimatedSection>
     <h2 v-slide-in class="flex justify-center text-4xl text-primary font-bold mb-8">Projects</h2>
   </AnimatedSection>
-  <div class="flex flex-wrap justify-center items-center gap-12 p-12">
-    <a v-for="project in projects" target="_blank" :href="project.link">
-      <AnimatedSectionUp>
+  <AnimatedSectionUp>
+    <div v-slide-up class="flex flex-wrap justify-center items-center gap-12 p-12">
+      <a v-for="project in projects" target="_blank" :href="project.link">
         <div v-slide-up :key="project.id"
           class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out hover:scale-110 group">
           <div class="w-80 sm:w-96 sm:h-52">
@@ -18,15 +18,17 @@
           </div>
           <p></p>
         </div>
-      </AnimatedSectionUp>
-    </a>
-  </div>
+      </a>
+    </div>
+  </AnimatedSectionUp>
 </template>
 
-<script>
+<script setup>
 import AnimatedSection from './animations/AnimatedSection.vue';
 import AnimatedSectionUp from './animations/AnimatedSectionUp.vue';
+</script>
 
+<script>
 export default {
   data() {
     return {
