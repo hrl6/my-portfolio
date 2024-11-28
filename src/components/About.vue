@@ -2,11 +2,13 @@
   <div class="max-w-6xl mx-auto px-4">
     <AnimatedSection>
       <div class="flex justify-center flex-col items-center">
-        <h2 v-slide-in class="animate-slideInFromLeft flex justify-center text-4xl text-primary font-bold mb-2">About Me
+        <h2 v-slide-in
+          class="animate-slideInFromLeft flex justify-center text-4xl tracking-wide text-primary font-bold mb-2">About
+          Me
         </h2>
         <!-- text-4xl font-semibold text-white relative pt-2 -->
         <AnimatedSectionUp>
-          <span v-slide-up class="delay-300 text-3xl font-semibold text-white">
+          <span v-slide-up class="delay-300 text-[1.6rem] sm:text-3xl font-semibold tracking-wide text-white">
             {{ displayText }}<span class="text-primary inline-block w-[4px] h-8 bg-current ml-0.5 -mb-0.5"
               :class="{ 'animate-blink': isTyping }"></span>
             <span> Developer</span>
@@ -16,7 +18,7 @@
     </AnimatedSection>
     <AnimatedSectionUp>
       <div class="flex flex-col lg:flex-row items-center lg:gap-8">
-        <div class="w-96 md:min-w-96">
+        <div class="w-auto md:min-w-96">
           <img src="../img/coding-green.png" alt="Coding Typing">
         </div>
         <div v-slide-up>

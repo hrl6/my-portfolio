@@ -2,8 +2,8 @@
   <div class="min-h-screen bg-dark text-white">
     <!-- TOP NAV -->
     <nav
-      :class="`fixed top-0 w-3/4 sm:w-[600px] mt-8 mx-auto left-0 right-0 bg-dark rounded-2xl z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-[160%]'}`">
-      <div class="w-full mx-auto px-12 py-4">
+      :class="`fixed top-0 w-3/4 sm:w-[600px] mt-8 mx-auto left-0 right-0 bg-dark border-[1px] border-gray-400/50 rounded-2xl z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-[160%]'}`">
+      <div class="w-full mx-auto px-4 sm:px-12 py-4 flex justify-center sm:inline-block">
         <div class="flex justify-between items-center">
           <!-- logo -->
           <a @click="scrollToTop"
@@ -12,7 +12,7 @@
           </a>
 
           <!-- desktop nav -->
-          <div class="hidden md:flex gap-6">
+          <div class="hidden md:flex gap-6 tracking-wide">
             <a @click="scrollToTop" class="hover:text-primary transition-colors cursor-pointer hover:scale-105">
               Home
             </a>
@@ -109,6 +109,7 @@ import {
 
 const isVisible = ref(true)
 let lastScrollPosition = 0
+let scrollThreshold = 6
 
 const scrollToSection = (sectionId) => {
   const element = document.getElementById(sectionId)
@@ -137,12 +138,19 @@ const handleMobileClick = (target) => {
 
 const handleScroll = () => {
   const currentScrollPosition = window.scrollY
+  const scrollDifference = Math.abs(currentScrollPosition - lastScrollPosition)
 
   // hide/show animation nav bar once scrolled
-  if (currentScrollPosition < lastScrollPosition) {
-    isVisible.value = true
-  } else {
-    isVisible.value = false
+  if (scrollDifference >= scrollThreshold) {
+    if (currentScrollPosition > 50) {
+      if (currentScrollPosition < lastScrollPosition) {
+        isVisible.value = true
+      } else {
+        isVisible.value = false
+      }
+    } else {
+      isVisible.value = true
+    }
   }
 
   lastScrollPosition = currentScrollPosition

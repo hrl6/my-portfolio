@@ -1,6 +1,6 @@
 export const slideUp = {
   mounted(el) {
-    console.log('Slide-up directive mounted')
+    // console.log('Slide-up directive mounted')
     el.classList.add('slide-up-element')
 
     // initial state
@@ -11,7 +11,7 @@ export const slideUp = {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          console.log('Intersection observed:', entry.isIntersecting)
+          // console.log('Intersection observed:', entry.isIntersecting)
           if (entry.isIntersecting) {
             el.style.transform = 'translateY(0)'
             el.style.opacity = '1'

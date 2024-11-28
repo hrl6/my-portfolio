@@ -1,6 +1,6 @@
 export const slideIn = {
   mounted(el) {
-    console.log('Slide-in directive mounted')
+    // console.log('Slide-in directive mounted')
     el.classList.add('slide-in-element')
 
     el.parentElement.style.overflow = 'hidden'
@@ -13,7 +13,7 @@ export const slideIn = {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          console.log('Intersection observed:', entry.isIntersecting)
+          // console.log('Intersection observed:', entry.isIntersecting)
           if (entry.isIntersecting) {
             el.style.transform = 'translateX(0)'
             el.style.opacity = '1'

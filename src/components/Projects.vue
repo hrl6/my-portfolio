@@ -1,22 +1,29 @@
 <template>
   <AnimatedSection>
-    <h2 v-slide-in class="flex justify-center text-4xl text-primary font-bold mb-8">Projects</h2>
+    <h2 v-slide-in class="flex justify-center text-4xl tracking-wide text-primary font-bold mb-8">Projects</h2>
   </AnimatedSection>
   <AnimatedSectionUp>
-    <div v-slide-up class="flex flex-wrap justify-center items-center gap-12 p-12">
+    <div v-slide-up class="flex flex-wrap justify-center items-center gap-12 p-6 sm:p-12">
       <a v-for="project in projects" target="_blank" :href="project.link">
         <div v-slide-up :key="project.id"
-          class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out hover:scale-110 group">
-          <div class="w-80 sm:w-96 sm:h-52">
-            <img :src="project.thumbnail" :alt="project.title" class="w-full h-full object-cover rounded-t-md" />
+          class="bg-darker rounded-xl shadow-md hover:shadow-lg transition-all duration-300 ease-in-out hover:scale-110 group p-3 sm:p-6">
+          <div class="w-auto sm:w-[36rem] sm:h-[22rem] rounded-md overflow-hidden">
+            <img :src="project.thumbnail" :alt="project.title"
+              class="w-full h-full object-cover transition-all ease-in-out duration-500 group-hover:scale-110" />
           </div>
-          <div
-            class="text-center text-lg font-semibold truncate bg-gray-200 text-gray-800 rounded-b group-hover:bg-darker duration-300"
+          <div class="text-lg font-semibold truncate text-gray-200 group-hover:bg-darker duration-300"
             :title="project.title">
-            <p class="text-lg group-hover:text-primary">{{ project.title }}</p>
-            <p class="text-sm group-hover:text-secondary">{{ project.stacks }}</p>
+            <p class="text-[1.6rem] pt-6 pb-4 group-hover:text-primary transition-all ease-in duration-300">
+              {{ project.title }}
+            </p>
+            <div v-if="Array.isArray(project.stacks)" class="flex gap-2">
+              <p v-for="stack in project.stacks"
+                class="text-[0.8rem] transition-all duration-300 ease-in py-1 px-4 text-neutral-400 hover:text-white bg-dark hover:bg-gray-400/50 border-[1px] border-gray-400/50 rounded-md">
+                {{
+                  stack }}</p>
+            </div>
+            <p v-else :d="stacks" class="text-sm hover:text-secondary">{{ project.stacks }}</p>
           </div>
-          <p></p>
         </div>
       </a>
     </div>
@@ -35,16 +42,16 @@ export default {
       projects: [
         {
           id: 1,
-          title: 'Simple Blog',
+          title: 'Deen Blog',
           link: 'https://github.com/hrl6/php-simple-blog',
-          stacks: 'PHP | MySQL',
+          stacks: ['PHP', 'MySQL'],
           thumbnail: '',
         },
         {
           id: 2,
           title: 'Personal Notes',
           link: 'https://github.com/hrl6/laravel11-notes-personal',
-          stacks: 'Laravel | Tailwind CSS',
+          stacks: ['Laravel', 'Tailwind CSS'],
           thumbnail: '',
         },
       ],

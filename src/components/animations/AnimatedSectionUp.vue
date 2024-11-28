@@ -20,9 +20,9 @@ onMounted(async () => {
   await nextTick()
   if (sectionRef.value) {
     const elements = sectionRef.value.querySelectorAll('.slide-up-element')
-    console.log('Found elements:', elements.length)
+    // console.log('Found elements:', elements.length)
     elements.forEach((el, index) => {
-      console.log(`Setting delay for element ${index}`)
+      // console.log(`Setting delay for element ${index}`)
       el.style.transitionDelay = `${props.delay + (index * 200)}ms`
     })
   }

@@ -1,6 +1,6 @@
 export const fadeIn = {
   mounted(el) {
-    console.log('Fade-in directive mounted')
+    // console.log('Fade-in directive mounted')
     el.classList.add('fade-in-element')
 
     el.style.opacity = '0'

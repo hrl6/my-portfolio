@@ -1,6 +1,6 @@
 <template>
   <AnimatedSection>
-    <h2 v-slide-in class="flex justify-center text-4xl text-primary font-bold mb-8">Contact</h2>
+    <h2 v-slide-in class="flex justify-center text-4xl tracking-wide text-primary font-bold mb-8">Contact</h2>
   </AnimatedSection>
   <AnimatedSectionFade>
     <div class="flex flex-col md:flex-row justify-center items-center gap-6 p-4">
