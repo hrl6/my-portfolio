@@ -6,23 +6,29 @@
     <div v-slide-up class="flex flex-wrap justify-center items-center gap-12 p-6 sm:p-12">
       <a v-for="project in projects" target="_blank" :href="project.link">
         <div v-slide-up :key="project.id"
-          class="bg-darker rounded-xl shadow-md hover:shadow-lg transition-all duration-300 ease-in-out hover:scale-110 group p-3 sm:p-6">
+          class="max-w-[39rem] bg-darker rounded-xl shadow-md hover:shadow-lg transition-all duration-300 ease-in-out hover:scale-110 group p-3 sm:p-6">
           <div class="w-auto sm:w-[36rem] sm:h-[22rem] rounded-md overflow-hidden">
             <img :src="project.thumbnail" :alt="project.title"
               class="w-full h-full object-cover transition-all ease-in-out duration-500 group-hover:scale-110" />
           </div>
-          <div class="text-lg font-semibold truncate text-gray-200 group-hover:bg-darker duration-300"
-            :title="project.title">
-            <p class="text-[1.6rem] pt-6 pb-4 group-hover:text-primary transition-all ease-in duration-300">
-              {{ project.title }}
-            </p>
-            <div v-if="Array.isArray(project.stacks)" class="flex gap-2">
-              <p v-for="stack in project.stacks"
-                class="text-[0.8rem] transition-all duration-300 ease-in py-1 px-4 text-neutral-400 hover:text-white bg-dark hover:bg-gray-400/50 border-[1px] border-gray-400/50 rounded-md">
-                {{
-                  stack }}</p>
+          <div class="flex sm:justify-between md:items-end gap-4 md:gap-24 flex-col md:flex-row">
+            <div class="text-lg font-semibold truncate text-gray-100 group-hover:bg-darker duration-300"
+              :title="project.title">
+              <p class="text-[1.6rem] pt-6 pb-4 group-hover:text-primary transition-all ease-in duration-300">
+                {{ project.title }}
+              </p>
+              <div v-if="Array.isArray(project.stacks)" class="flex flex-wrap gap-2">
+                <p v-for="stack in project.stacks"
+                  class="text-[0.8rem] transition-all duration-300 ease-in py-1 px-4 text-neutral-400 hover:text-white bg-dark hover:bg-gray-400/50 border-[1px] border-gray-400/50 rounded-md">
+                  {{
+                    stack }}</p>
+              </div>
+              <p v-else :d="stacks" class="text-sm hover:text-secondary">{{ project.stacks }}</p>
             </div>
-            <p v-else :d="stacks" class="text-sm hover:text-secondary">{{ project.stacks }}</p>
+            <div
+              class="bg-primary p-3 rounded-md max-w-[49px] hover:bg-primary/80 transition-colors ease-in duration-200">
+              <MoveUpRight class="text-dark" />
+            </div>
           </div>
         </div>
       </a>
@@ -33,6 +39,9 @@
 <script setup>
 import AnimatedSection from './animations/AnimatedSection.vue';
 import AnimatedSectionUp from './animations/AnimatedSectionUp.vue';
+import {
+  MoveUpRight
+} from 'lucide-vue-next'
 </script>
 
 <script>
