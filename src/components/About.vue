@@ -24,7 +24,7 @@
         <div v-slide-up>
           <div class="px-10">
             <p class="text-lg text-white mb-4">
-              Salam! I'm Hairul Marwan, a full-stack developer from Sabah, Malaysia with <b>1 year of professional
+              Salam! I'm Hairul Marwan, a full-stack developer from Sabah, Malaysia with <b>a year of professional
                 experience</b>. I specialize in creating seamless web applications, bringing together responsive
               frontend
               interfaces and robust backend solutions.

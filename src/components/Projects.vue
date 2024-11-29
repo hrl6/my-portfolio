@@ -74,40 +74,40 @@ export default {
     return {
       projects: [
         {
-          id: 1,
-          title: 'Deen Blog',
-          link: 'https://github.com/hrl6/php-simple-blog',
-          stacks: ['PHP', 'MySQL'],
-          demo: '',
+          id: 3,
+          title: 'Simple Admin Panel',
+          link: 'https://github.com/hrl6/admin-panel',
+          stacks: ['Vue', 'Django', 'PostgreSQL', 'Tailwind CSS', 'Deployment'],
+          demo: 'https://admin-panel-delta-rouge.vercel.app',
           thumbnail: '',
         },
         {
           id: 2,
           title: 'Personal Notes',
           link: 'https://github.com/hrl6/laravel11-notes-personal',
-          stacks: ['Laravel', 'Tailwind CSS'],
+          stacks: ['Laravel', 'Tailwind CSS', 'SQLite'],
           demo: '',
           thumbnail: '',
         },
         {
-          id: 3,
-          title: 'Simple Admin Panel',
-          link: 'https://github.com/hrl6/admin-panel',
-          stacks: ['Vue', 'Django', 'Deployment'],
-          demo: 'https://admin-panel-delta-rouge.vercel.app',
+          id: 1,
+          title: 'Deen Blog',
+          link: 'https://github.com/hrl6/php-simple-blog',
+          stacks: ['PHP', 'CSS', 'MySQL'],
+          demo: '',
           thumbnail: '',
         },
       ],
     }
   },
   created() {
-    import('../img/project1.png').then((module) => {
+    import('../img/project3.png').then((module) => {
       this.projects[0].thumbnail = module.default
     })
     import('../img/project2.png').then((module) => {
       this.projects[1].thumbnail = module.default
     })
-    import('../img/project3.png').then((module) => {
+    import('../img/project1.png').then((module) => {
       this.projects[2].thumbnail = module.default
     })
   },
