@@ -25,10 +25,35 @@
               </div>
               <p v-else :d="stacks" class="text-sm hover:text-secondary">{{ project.stacks }}</p>
             </div>
-            <div
+            <template v-if="project.demo != ''">
+              <div class="flex gap-3">
+                <a :href="project.link">
+                  <div
+                    class="bg-primary p-3 rounded-md max-w-[49px] hover:bg-primary/80 transition-colors ease-in duration-200">
+                    <MoveUpRight class="text-dark" />
+                  </div>
+                </a>
+                <a :href="project.demo">
+                  <div
+                    class="bg-gray-600 p-3 rounded-md max-w-[49px] hover:bg-dark/50 transition-colors ease-in duration-200">
+                    <Radio class="text-neutral-300" />
+                  </div>
+                </a>
+              </div>
+            </template>
+            <template v-else>
+              <a :href="project.link">
+                <div
+                  class="bg-primary p-3 rounded-md max-w-[49px] hover:bg-primary/80 transition-colors ease-in duration-200">
+                  <MoveUpRight class="text-dark" />
+                </div>
+              </a>
+            </template>
+
+            <!-- <div
               class="bg-primary p-3 rounded-md max-w-[49px] hover:bg-primary/80 transition-colors ease-in duration-200">
               <MoveUpRight class="text-dark" />
-            </div>
+            </div> -->
           </div>
         </div>
       </a>
@@ -39,9 +64,8 @@
 <script setup>
 import AnimatedSection from './animations/AnimatedSection.vue';
 import AnimatedSectionUp from './animations/AnimatedSectionUp.vue';
-import {
-  MoveUpRight
-} from 'lucide-vue-next'
+import { MoveUpRight } from 'lucide-vue-next'
+import { Radio } from 'lucide-vue-next';
 </script>
 
 <script>
@@ -54,6 +78,7 @@ export default {
           title: 'Deen Blog',
           link: 'https://github.com/hrl6/php-simple-blog',
           stacks: ['PHP', 'MySQL'],
+          demo: '',
           thumbnail: '',
         },
         {
@@ -61,6 +86,15 @@ export default {
           title: 'Personal Notes',
           link: 'https://github.com/hrl6/laravel11-notes-personal',
           stacks: ['Laravel', 'Tailwind CSS'],
+          demo: '',
+          thumbnail: '',
+        },
+        {
+          id: 3,
+          title: 'Simple Admin Panel',
+          link: 'https://github.com/hrl6/admin-panel',
+          stacks: ['Vue', 'Django', 'Deployment'],
+          demo: 'https://admin-panel-delta-rouge.vercel.app',
           thumbnail: '',
         },
       ],
@@ -72,6 +106,9 @@ export default {
     })
     import('../img/project2.png').then((module) => {
       this.projects[1].thumbnail = module.default
+    })
+    import('../img/project3.png').then((module) => {
+      this.projects[2].thumbnail = module.default
     })
   },
 }

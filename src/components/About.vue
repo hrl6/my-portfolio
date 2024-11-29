@@ -24,15 +24,14 @@
         <div v-slide-up>
           <div class="px-10">
             <p class="text-lg text-white mb-4">
-              Salam! I’m Hairul Marwan, a self-taught full-stack developer from Sabah, Malaysia. I enjoy working on both
-              the frontend and backend. From crafting smooth, interactive user interfaces to building the logic that
-              powers everything behind the scenes, I love the balance of both sides and the challenge of making them
-              work
-              together seamlessly.
+              Salam! I'm Hairul Marwan, a full-stack developer from Sabah, Malaysia with <b>1 year of professional
+                experience</b>. I specialize in creating seamless web applications, bringing together responsive
+              frontend
+              interfaces and robust backend solutions.
             </p>
             <p class="text-lg text-white">
-              When I’m not coding, you can find me learning something new or experimenting with a project that pushes my
-              skills <span class="italic">(or I might be reading something •ᴗ•)</span>.
+              When I'm not coding, you'll find me diving into new technologies or getting lost in a good fiction book
+              •ᴗ•
             </p>
           </div>
         </div>
