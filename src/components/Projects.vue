@@ -3,7 +3,7 @@
     <h2 v-slide-in class="flex justify-center text-4xl tracking-wide text-primary font-bold mb-8">Projects</h2>
   </AnimatedSection>
   <AnimatedSectionUp>
-    <div v-slide-up class="flex flex-wrap justify-center items-stretch gap-12 p-6 sm:p-12">
+    <div v-slide-up class="flex flex-wrap justify-center items-stretch gap-6 sm:gap-12 p-6 sm:p-12">
       <a v-for="project in projects" target="_blank" :href="project.link">
         <div v-slide-up :key="project.id"
           class="max-w-[39rem] bg-darker rounded-xl shadow-md hover:shadow-lg transition-all duration-300 ease-in-out hover:scale-110 group p-3 sm:p-6">
@@ -77,7 +77,7 @@ export default {
           id: 1,
           title: 'Deen Blog',
           link: 'https://github.com/hrl6/php-simple-blog',
-          stacks: ['PHP', 'CSS', 'MySQL'],
+          stacks: ['PHP', 'CSS', 'MySQL', 'CRUD'],
           demo: '',
           thumbnail: '',
         },
@@ -85,7 +85,7 @@ export default {
           id: 2,
           title: 'Personal Notes',
           link: 'https://github.com/hrl6/laravel11-notes-personal',
-          stacks: ['Laravel', 'Tailwind CSS', 'SQLite'],
+          stacks: ['Laravel', 'Tailwind CSS', 'SQLite', 'Pagination'],
           demo: '',
           thumbnail: '',
         },
@@ -93,7 +93,7 @@ export default {
           id: 3,
           title: 'Simple Admin Panel',
           link: 'https://github.com/hrl6/admin-panel',
-          stacks: ['Vue', 'Django', 'PostgreSQL', 'Tailwind CSS', 'Deployment'],
+          stacks: ['Vue', 'Django', 'PostgreSQL', 'Tailwind CSS', 'CORS', 'Deployment'],
           demo: 'https://admin-panel-delta-rouge.vercel.app',
           thumbnail: '',
         },

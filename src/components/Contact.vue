@@ -54,7 +54,7 @@
       </a>
 
       <!-- GitHub -->
-      <a href="https://github.com/hrl6" target="_blank"
+      <a v-fade-in href="https://github.com/hrl6" target="_blank"
         class="w-64 md:w-auto flex items-center space-x-4 px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-110 bg-darkers group">
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="64" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" class="text-white transition-colors duration-300 group-hover:text-primary"

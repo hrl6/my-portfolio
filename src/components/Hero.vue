@@ -1,6 +1,6 @@
 <template>
   <AnimatedSection :delay="200">
-    <div class="flex flex-wrap justify-center items-center px-14 py-14 sm:py-24 lg:py-44 gap-20">
+    <div class="flex flex-wrap justify-center items-center px-14 py-14 sm:py-24 lg:py-44 gap-10 sm:gap-20">
       <div>
         <h1 v-slide-in class="font-raleway text-5xl md:text-6xl font-extrabold tracking-wider">Hai!</h1>
         <h1 v-slide-in class="font-raleway text-5xl md:text-6xl font-extrabold tracking-wider">I'm Hairul Marwan.</h1>
