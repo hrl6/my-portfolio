@@ -3,7 +3,7 @@
     <h2 v-slide-in class="flex justify-center text-4xl tracking-wide text-primary font-bold mb-8">Projects</h2>
   </AnimatedSection>
   <AnimatedSectionUp>
-    <div v-slide-up class="flex flex-wrap justify-center items-center gap-12 p-6 sm:p-12">
+    <div v-slide-up class="flex flex-wrap justify-center items-stretch gap-12 p-6 sm:p-12">
       <a v-for="project in projects" target="_blank" :href="project.link">
         <div v-slide-up :key="project.id"
           class="max-w-[39rem] bg-darker rounded-xl shadow-md hover:shadow-lg transition-all duration-300 ease-in-out hover:scale-110 group p-3 sm:p-6">
@@ -74,11 +74,11 @@ export default {
     return {
       projects: [
         {
-          id: 3,
-          title: 'Simple Admin Panel',
-          link: 'https://github.com/hrl6/admin-panel',
-          stacks: ['Vue', 'Django', 'PostgreSQL', 'Tailwind CSS', 'Deployment'],
-          demo: 'https://admin-panel-delta-rouge.vercel.app',
+          id: 1,
+          title: 'Deen Blog',
+          link: 'https://github.com/hrl6/php-simple-blog',
+          stacks: ['PHP', 'CSS', 'MySQL'],
+          demo: '',
           thumbnail: '',
         },
         {
@@ -90,24 +90,24 @@ export default {
           thumbnail: '',
         },
         {
-          id: 1,
-          title: 'Deen Blog',
-          link: 'https://github.com/hrl6/php-simple-blog',
-          stacks: ['PHP', 'CSS', 'MySQL'],
-          demo: '',
+          id: 3,
+          title: 'Simple Admin Panel',
+          link: 'https://github.com/hrl6/admin-panel',
+          stacks: ['Vue', 'Django', 'PostgreSQL', 'Tailwind CSS', 'Deployment'],
+          demo: 'https://admin-panel-delta-rouge.vercel.app',
           thumbnail: '',
         },
       ],
     }
   },
   created() {
-    import('../img/project3.png').then((module) => {
+    import('../img/project1.png').then((module) => {
       this.projects[0].thumbnail = module.default
     })
     import('../img/project2.png').then((module) => {
       this.projects[1].thumbnail = module.default
     })
-    import('../img/project1.png').then((module) => {
+    import('../img/project3.png').then((module) => {
       this.projects[2].thumbnail = module.default
     })
   },
