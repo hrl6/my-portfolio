@@ -27,13 +27,13 @@
             </div>
             <template v-if="project.demo != ''">
               <div class="flex gap-3">
-                <a :href="project.link">
+                <a :href="project.link" target="_blank">
                   <div
                     class="bg-primary p-3 rounded-md max-w-[49px] hover:bg-primary/80 transition-colors ease-in duration-200">
                     <MoveUpRight class="text-dark" />
                   </div>
                 </a>
-                <a :href="project.demo">
+                <a :href="project.demo" target="_blank">
                   <div
                     class="bg-gray-600 p-3 rounded-md max-w-[49px] hover:bg-dark/50 transition-colors ease-in duration-200">
                     <Radio class="text-neutral-300" />
@@ -42,18 +42,13 @@
               </div>
             </template>
             <template v-else>
-              <a :href="project.link">
+              <a :href="project.link" target="_blank">
                 <div
                   class="bg-primary p-3 rounded-md max-w-[49px] hover:bg-primary/80 transition-colors ease-in duration-200">
                   <MoveUpRight class="text-dark" />
                 </div>
               </a>
             </template>
-
-            <!-- <div
-              class="bg-primary p-3 rounded-md max-w-[49px] hover:bg-primary/80 transition-colors ease-in duration-200">
-              <MoveUpRight class="text-dark" />
-            </div> -->
           </div>
         </div>
       </a>
