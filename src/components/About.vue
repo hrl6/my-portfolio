@@ -24,7 +24,7 @@
         <div v-slide-up>
           <div class="px-10">
             <p class="text-lg text-white mb-4">
-              Salam! I'm Hairul Marwan, a full-stack developer from Sabah, Malaysia with <b>a year of professional
+              Salam! I'm Hairul Marwan, a web developer from Sabah, Malaysia with <b>a year of professional
                 experience</b>. I specialize in creating seamless web applications, bringing together responsive
               frontend
               interfaces and robust backend solutions.
@@ -46,7 +46,7 @@ import AnimatedSection from './animations/AnimatedSection.vue';
 import AnimatedSectionUp from './animations/AnimatedSectionUp.vue';
 
 
-const title = ['Full-Stack', 'Self-Taught']
+const title = ['Front-End', 'Back-End', 'Self-Taught']
 const displayText = ref('')
 const isTyping = ref(true)
 const currentTitleIndex = ref(0)
