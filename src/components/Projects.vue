@@ -92,6 +92,14 @@ export default {
           demo: 'https://admin-panel-delta-rouge.vercel.app',
           thumbnail: '',
         },
+        {
+          id: 4,
+          title: 'Trello Clone',
+          link: 'https://github.com/hrl6/trello-clone',
+          stacks: ['React', 'NextJS', 'TypeScript', 'tRPC', 'CSR', 'Prisma', 'Deployment'],
+          demo: 'https://trello-clone-lovat-seven.vercel.app/',
+          thumbnail: '',
+        },
       ],
     }
   },
@@ -104,6 +112,9 @@ export default {
     })
     import('../img/project3.png').then((module) => {
       this.projects[2].thumbnail = module.default
+    })
+    import('../img/project4.png').then((module) => {
+      this.projects[3].thumbnail = module.default
     })
   },
 }
