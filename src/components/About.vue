@@ -18,7 +18,7 @@
     </AnimatedSection>
     <AnimatedSectionUp>
       <div class="flex flex-col lg:flex-row items-center lg:gap-8">
-        <div class="w-auto md:min-w-96">
+        <div class="w-auto md:max-w-96">
           <img src="../img/coding-green.png" alt="Coding Typing">
         </div>
         <div v-slide-up>
